@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 // Does some kind of computation.
 // Output is written to a file or to the terminal,
 // depending on a command-line argument.
@@ -15,7 +19,7 @@ public class Main {
         }
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String fileName = getFileName(args);
         int result = doComputation();
         if (fileName == null) {
@@ -25,3 +29,10 @@ public class Main {
             // write to a file
             // fileName is specifically the name of the file
             // to write to
+            FileWriter writer = new FileWriter(new File(fileName));
+            writer.write("" + result);
+            writer.close();
+        }
+    }
+}
+
