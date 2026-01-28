@@ -23,6 +23,9 @@ public class Main {
             writer.close();
         }
     }
+
+    // Issue: Need to pass fileName through everything
+    // Issue: Creating Writer every time
     
     // Performs some kind of computation.
     public static int doComputation(String fileName) throws IOException {
