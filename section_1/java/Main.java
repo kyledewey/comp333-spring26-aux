@@ -39,12 +39,12 @@ public class Main {
     }
     
     public static void main(String[] args) throws IOException {
-        example();
-        // String fileName = getFileName(args);
-        // Writer myWriter = new Writer(fileName);
-        // int result = doComputation(myWriter);
-        // myWriter.write("" + result);
-        // myWriter.close();
+        // example();
+        String fileName = getFileName(args);
+        Writer myWriter = new Writer(fileName);
+        int result = doComputation(myWriter);
+        myWriter.write("" + result);
+        myWriter.close();
     }
 }
 
