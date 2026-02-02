@@ -1,5 +1,3 @@
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
 // Does some kind of computation.
@@ -27,12 +25,26 @@ public class Main {
         return retval;
     }
 
+    public static void example() throws IOException {
+        Writer writesToFoo = new Writer("foo.txt");
+        Writer writesToBar = new Writer("bar.txt");
+        Writer writesToTerminal = new Writer(null);
+
+        writesToFoo.write("hello");
+        writesToBar.write("goodbye");
+        writesToTerminal.write("something on terminal");
+        writesToFoo.close();
+        writesToBar.close();
+        writesToTerminal.close();
+    }
+    
     public static void main(String[] args) throws IOException {
-        String fileName = getFileName(args);
-        Writer myWriter = new Writer(fileName);
-        int result = doComputation(myWriter);
-        writer.write("" + result);
-        writer.close();
+        example();
+        // String fileName = getFileName(args);
+        // Writer myWriter = new Writer(fileName);
+        // int result = doComputation(myWriter);
+        // myWriter.write("" + result);
+        // myWriter.close();
     }
 }
 
