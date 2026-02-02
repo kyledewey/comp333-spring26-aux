@@ -3,11 +3,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Writer {
-    private FileWriter writer = null;
+    private final FileWriter writer;
 
     public Writer(String fileName) throws IOException {
         if (fileName != null) {
             writer = new FileWriter(new File(fileName));
+        } else {
+            writer = null;
         }
     }
         
