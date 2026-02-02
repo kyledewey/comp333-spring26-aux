@@ -26,9 +26,9 @@ public class Main {
     }
 
     public static void example() throws IOException {
-        Writer writesToFoo = new Writer("foo.txt");
-        Writer writesToBar = new Writer("bar.txt");
-        Writer writesToTerminal = new Writer(null);
+        Writer writesToFoo = new MyFileWriter("foo.txt");
+        Writer writesToBar = new MyFileWriter("bar.txt");
+        Writer writesToTerminal = new TerminalWriter(null);
 
         writesToFoo.write("hello");
         writesToBar.write("goodbye");
@@ -41,7 +41,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         // example();
         String fileName = getFileName(args);
-        Writer myWriter = new Writer(fileName);
+        Writer myWriter;
+        if (fileName == null) {
+            myWriter = new TerminalWriter();
+        } else {
+            myWriter = new MyFileWriter(fileName);
+        }
         int result = doComputation(myWriter);
         myWriter.write("" + result);
         myWriter.close();
