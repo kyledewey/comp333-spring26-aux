@@ -50,6 +50,8 @@ public class Main {
         int result = doComputation(myWriter);
         myWriter.write("" + result);
         myWriter.close();
+
+        // FOR NEXT TIME: show subtyping / ad-hoc polymorphism, show handout
     }
 }
 

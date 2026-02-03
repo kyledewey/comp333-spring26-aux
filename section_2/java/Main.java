@@ -28,13 +28,17 @@ public class Main {
         String fileName = getFileName(args);
         Writer writer;
         if (fileName == null) {
+            // Writer = TerminalWriter // subtyping polymorphism
             writer = new TerminalWriter();
         } else {
+            // Writer = MyFileWriter // subtyping polymorphism
             writer = new MyFileWriter(fileName);
         }
         int result = doComputation(writer);
-        writer.write("" + result);
+        writer.write("" + result); // ad-hoc polymorphism: actual method called is determined at runtime based on the runtime type of writer
         writer.close();
+
+        // FOR NEXT TIME: recap subtyping / ad-hoc, get into handout
     }
 }
     
