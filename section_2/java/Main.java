@@ -26,7 +26,12 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         String fileName = getFileName(args);
-        Writer writer = new Writer(fileName);
+        Writer writer;
+        if (fileName == null) {
+            writer = new TerminalWriter();
+        } else {
+            writer = new MyFileWriter(fileName);
+        }
         int result = doComputation(writer);
         writer.write("" + result);
         writer.close();
