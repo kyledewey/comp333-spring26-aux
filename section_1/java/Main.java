@@ -43,8 +43,10 @@ public class Main {
         String fileName = getFileName(args);
         Writer myWriter;
         if (fileName == null) {
+            // Writer = TerminalWriter; subtyping polymorphism
             myWriter = new TerminalWriter();
         } else {
+            // Writer = MyFileWriter; subtyping polymorphism
             myWriter = new MyFileWriter(fileName);
         }
         int result = doComputation(myWriter);
@@ -53,5 +55,10 @@ public class Main {
 
         // FOR NEXT TIME: show subtyping / ad-hoc polymorphism, show handout
     }
+
+    // System.out.println() // println()
+    // System.out.println(5) // println(int)
+    // System.out.println(3.14) // println(double)
+    // System.out.println("foo")
 }
 
