@@ -50,15 +50,34 @@ public class Main {
             myWriter = new MyFileWriter(fileName);
         }
         int result = doComputation(myWriter);
+
+        // myWriter compile-time type: Writer
+        //   When code is compiled (javac)
+        // myWriter runtime type: TerminalWriter OR MyFileWriter
+        //   When code is run (java)
+
+        // O(1)
+        // if (myWriter instanceof TerminalWriter) {
+        //   TerminalWriter.write(...);
+        // } else if (myWriter instanceof MyFileWriter) {
+        //   MyFileWriter.write(...);
+        // } else if (...) {
+        //   ...
+        // } else if (...) {
+        //   ...
+        // }
+
+        // ad-hoc polymorphism: exactly which write is called is
+        // based on the runtime type of myWriter
         myWriter.write("" + result);
         myWriter.close();
-
-        // FOR NEXT TIME: show subtyping / ad-hoc polymorphism, show handout
     }
 
     // System.out.println() // println()
     // System.out.println(5) // println(int)
     // System.out.println(3.14) // println(double)
     // System.out.println("foo")
+
+    // FOR NEXT TIME: get into handout
 }
 
