@@ -35,10 +35,28 @@ public class Main {
             writer = new MyFileWriter(fileName);
         }
         int result = doComputation(writer);
-        writer.write("" + result); // ad-hoc polymorphism: actual method called is determined at runtime based on the runtime type of writer
+        // ad-hoc polymorphism: actual method called is determined
+        // at runtime based on the runtime type of writer
+        //
+        // writer compile-time type: Writer
+        // writer runtime type: TerminalWriter OR MyFileWriter
+
+        // O(1)
+        // if (writer instanceof TerminalWriter) {
+        //   TerminalWriter.write();
+        // } else if (writer instanceof MyFileWriter) {
+        //   MyFileWriter.write();
+        // } else if (writer instanceof NetworkWriter) {
+        //   NetworkWriter.write();
+        // } ...
+        
+        writer.write("" + result);
         writer.close();
 
-        // FOR NEXT TIME: recap subtyping / ad-hoc, get into handout
+        // System.out.println();
+        // System.out.println(5);
+        // System.out.println(3.14);
+        // System.out.println("foo");       
     }
 }
     
