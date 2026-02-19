@@ -4,6 +4,8 @@ public interface ImmutableList {
     public boolean contains(final int value);
     public ImmutableList append(final ImmutableList other);
 
+    public boolean isEmpty();
+    
     // Defined for you
     public boolean equals(final Object other);
     public String toString();

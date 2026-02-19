@@ -25,4 +25,36 @@ public class Cons implements ImmutableList {
     public int hashCode() {
         return sum();
     } // hashCode
+
+    // [1, 2, 3].length()
+    //   head: 1
+    //   tail: [2, 3]
+    //   this: [1, 2, 3]
+    //   expected result: 3
+    public int length() {
+        // What is the recursive call?
+        // What do I make the recursive call on?
+
+        //         [2, 3].length()
+        int rest = tail.length();
+        // rest: 2
+
+        return rest + 1;
+    }
+    // NEXT TIME: go through length on board and show why it works,
+    //            addAmount example
+    
+    public int sum() {
+        return -1;
+    }
+    public boolean contains(final int value) {
+        return false;
+    }
+    public ImmutableList append(final ImmutableList other) {
+        return null;
+    }
+
+    public boolean isEmpty() {
+        return false;
+    }
 } // Cons
