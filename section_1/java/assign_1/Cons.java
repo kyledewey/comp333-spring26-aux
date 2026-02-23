@@ -25,4 +25,17 @@ public class Cons implements ImmutableList {
     public int hashCode() {
         return sum();
     } // hashCode
+
+    public int length() {
+        return -1;
+    }
+    public int sum() {
+        return -1;
+    }
+    public boolean contains(final int value) {
+        return true;
+    }
+    public ImmutableList append(final ImmutableList other) {
+        return null;
+    }
 } // Cons
