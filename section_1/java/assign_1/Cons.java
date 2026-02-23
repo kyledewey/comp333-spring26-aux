@@ -38,6 +38,7 @@ public class Cons implements ImmutableList {
         // rest: 2
         int rest = tail.length();
         return rest + 1;
+        // NEXT TIME: isEmpty, addAmount
     }
     
     public int sum() {
