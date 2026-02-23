@@ -26,9 +26,20 @@ public class Cons implements ImmutableList {
         return sum();
     } // hashCode
 
+    // [4, 2, 7].length() ==> 3
+    // head: 4
+    // tail: [2, 7]
+    // this: [4, 2, 7]
+    // expected result: 3
     public int length() {
-        return -1;
+        // must be recursive - Cons is recursive at the data level
+        //
+        // [2, 7].length() ==> 2
+        // rest: 2
+        int rest = tail.length();
+        return rest + 1;
     }
+    
     public int sum() {
         return -1;
     }
