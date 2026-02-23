@@ -42,6 +42,7 @@ public class Cons implements ImmutableList {
         return rest + 1;
     }
     // NEXT TIME: go through length on board and show why it works,
+    //            including virtual dispatch part on tail.length(),
     //            addAmount example
     
     public int sum() {
