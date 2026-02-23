@@ -14,7 +14,7 @@ public class Nil implements ImmutableList {
     } // hashCode
 
     public int length() {
-        return -1;
+        return 0;
     }
     public int sum() {
         return -1;
