@@ -30,5 +30,12 @@ public class Nil implements ImmutableList {
     public boolean isEmpty() {
         return true;
     }
+
+    // [].addAmount(5) ==> []
+    // new Nil().addAmount(5) ==> new Nil()
+    public ImmutableList addAmount(int amount) {
+        // return new Nil();
+        return this;
+    }
 } // Nil
     

@@ -58,4 +58,20 @@ public class Cons implements ImmutableList {
     public boolean isEmpty() {
         return false;
     }
+
+    // [3, 1].addAmount(2) ==> [5, 3]
+    public ImmutableList addAmount(int amount) {
+        // amount: 2
+        // head: 3
+        // tail: [1]
+        // this: [3, 1]  (what we started with)
+
+        //                   [1].addAmount(2)
+        ImmutableList rest = tail.addAmount(amount);
+        // rest:    [3]
+        // want: [5, 3]
+
+        return new Cons(head + amount, rest);
+    }
+        
 } // Cons
