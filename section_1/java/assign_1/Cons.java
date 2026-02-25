@@ -50,4 +50,25 @@ public class Cons implements ImmutableList {
     public ImmutableList append(final ImmutableList other) {
         return null;
     }
+
+    public boolean isEmpty() {
+        return false;
+    }
+
+    // [3, 2, 4].addAmount(1) ==> [4, 3, 5]
+    public ImmutableList addAmount(final int amount) {
+        // head: 3
+        // tail: [2, 4]
+        // amount: 1
+        // this: [3, 2, 4] (started with)
+
+        ImmutableList rest = tail.addAmount(amount);
+        //                   [2, 4].addAmount(1)
+        // rest:        [3, 5]
+        // expected: [4, 3, 5]
+        return new Cons(head + amount, rest);
+
+        //return new Cons(head + amount, tail.addAmount(amount));
+    }
+
 } // Cons

@@ -25,5 +25,19 @@ public class Nil implements ImmutableList {
     public ImmutableList append(final ImmutableList other) {
         return null;
     }
+
+    public boolean isEmpty() {
+        return true;
+    }
+
+    // [].addAmount(7) ==> []
+    public ImmutableList addAmount(final int amount) {
+        // amount: 7
+        // this: []
+
+        // return new Nil();
+        return this;
+    }
+
 } // Nil
     
