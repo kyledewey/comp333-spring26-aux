@@ -3,3 +3,11 @@
 function add(x, y) {
     return x + y;
 }
+
+function doSomething(a) {
+    if (a < 3) {
+        return 0;
+    } else {
+        return "foo";
+    }
+}
