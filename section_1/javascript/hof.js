@@ -48,3 +48,61 @@ function printLessThanTen(arr) {
 //     }
 // }
 
+function delayedAdd(x) {
+    return (y) => x + y;
+}
+
+function callMe(foo) {
+    foo();
+}
+
+function indirectIf(bool, function1, function2) {
+    if (bool) {
+        function1();
+    } else {
+        function2();
+    }
+}
+
+function indirectWhile(condition, body) {
+    if (condition()) {
+        body();
+        indirectWhile(condition, body);
+    }
+}
+
+function add(x, y) {
+    // console.log("first param: " + x);
+    // console.log("second param: " + y);
+    let result = x + y;
+    // console.log("return value: " + result);
+    return result;
+}
+
+function debug(addMethod) {
+    return (x, y) => {
+        let returnValue = addMethod(x, y);
+        console.log("first param: " + x);
+        console.log("second param: " + y);
+        console.log("return value: " + returnValue);
+        // console.table({ x,
+        //                 y,
+        //                 returnValue });
+        return returnValue;
+    }        
+}
+
+function sub(a, b) { return a - b; }
+
+// let withAdd = (addMethod, num) => (x, y) => addMethod(x, y) + num;
+
+// addMethod: (int, int) => int
+// num: int
+function withAdd(addMethod, num) {
+    // x and the num
+    // return (x, y) => addMethod(x, y) + num;
+    return function (x, y) {
+        return addMethod(x, y) + num;
+    };
+}
+
