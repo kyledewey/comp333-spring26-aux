@@ -32,3 +32,30 @@ function printLessThanTen(arr) {
     printLessThan(arr, 10);
 }
 
+// let foo = function () {};
+
+function callMe(foo) {
+    foo();
+}
+
+// boo: true
+// func1: some function taking no arguments
+// func2: some function taking no arguments
+function indirectIf(boo, func1, func2) {
+    if (boo) {
+        func1();
+    } else {
+        func2();
+    }
+}
+
+function indirectWhile(condition, body) {
+    if (condition()) {
+        body();
+        indirectWhile(condition, body);
+    }
+}
+
+function debug(add) {
+    // FOR NEXT TIME - go through it
+    
