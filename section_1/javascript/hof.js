@@ -79,9 +79,11 @@ function add(x, y) {
     return result;
 }
 
-function debug(addMethod) {
+function sub(a, b) { return a - b; }
+
+function debug(someFunc) {
     return (x, y) => {
-        let returnValue = addMethod(x, y);
+        let returnValue = someFunc(x, y);
         console.log("first param: " + x);
         console.log("second param: " + y);
         console.log("return value: " + returnValue);
@@ -92,7 +94,6 @@ function debug(addMethod) {
     }        
 }
 
-function sub(a, b) { return a - b; }
 
 // let withAdd = (addMethod, num) => (x, y) => addMethod(x, y) + num;
 
