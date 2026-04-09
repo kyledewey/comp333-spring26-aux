@@ -56,6 +56,45 @@ function indirectWhile(condition, body) {
     }
 }
 
-function debug(add) {
-    // FOR NEXT TIME - go through it
-    
+function delayedAdd(x) {
+    return function (y) {
+        return x + y;
+    };
+}
+
+function add(x, y) { return x + y; }
+
+// add: should be a function taking two
+// params and returning something
+//
+// f: (int, int) => int
+function debug(f) {
+    return function (a, b) {
+        console.log("First: " + a);
+        console.log("Second: " + b);
+        let result = f(a, b);
+        console.log("Return value: " + result);
+        return result;
+    };
+}
+
+function withAdd(f, integer) {
+    return function (a, b) {
+        let result = f(a, b);
+        return result + integer;
+    };
+}
+
+// for (int element : arr) {
+//   System.out.println(element);
+// }
+//
+// for element in arr:
+//   print(element)
+
+function forEach(arr, f) {
+    for (let index = 0; index < arr.length; index++) {
+        let element = arr[index];
+        f(element);
+    }
+}
