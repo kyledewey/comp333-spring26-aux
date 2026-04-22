@@ -50,3 +50,21 @@ function sum(arr) {
     // return retval;
 }
 
+function findMin(arr) {
+    let smallestSoFar = 0;
+    for (let index = 0; index < arr.length; index++) {
+        let elem = arr[index];
+        if (elem < smallestSoFar) {
+            smallestSoFar = elem;
+        }
+    }
+    return smallestSoFar;
+}
+
+function min(a, b) {
+    if (a < b) {
+        return a;
+    } else {
+        return b;
+    }
+}
