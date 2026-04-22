@@ -1,11 +1,12 @@
 // operation: function that takes an int, returns a boolean
 function printSome(arr, operation) {
-    for (let index = 0; index < arr.length; index++) {
-        let elem = arr[index];
-        if (operation(elem)) {
-            console.log(elem);
-        }
-    }
+    arr.filter(operation).forEach((e) => console.log(e));
+    // for (let index = 0; index < arr.length; index++) {
+    //     let elem = arr[index];
+    //     if (operation(elem)) {
+    //         console.log(elem);
+    //     }
+    // }
 }
 
 function printAll(arr) {
@@ -97,4 +98,39 @@ function forEach(arr, f) {
         let element = arr[index];
         f(element);
     }
+}
+
+// arr: array of values
+// func: a function
+//  -Takes the current value of the accumulator
+//  -Takes the current array element
+//  Return the new value of the accumulator
+// startingValue: starting value of the accumulator
+function reduce(arr, func, startingValue) {
+    let accumulator = startingValue;
+    for (let index = 0; index < arr.length; index++) {
+        let element = arr[index];
+        accumulator = func(accumulator, element);
+    }
+    return accumulator;
+}
+
+function product(arr) {
+    return reduce(arr, (a, e) => a * e, 1);
+    // let retval = 1;
+    // for (let index = 0; index < arr.length; index++) {
+    //     let element = arr[index];
+    //     retval = retval * element;
+    // }
+    // return retval;
+}
+
+function sum(arr) {
+    return reduce(arr, (a, e) => a + e, 0);
+    // let retval = 0;
+    // for (let index = 0; index < arr.length; index++) {
+    //     let element = arr[index];
+    //     retval = retval + element;
+    // }
+    // return retval;
 }
