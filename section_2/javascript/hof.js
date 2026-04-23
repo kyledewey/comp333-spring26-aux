@@ -115,6 +115,17 @@ function reduce(arr, func, startingValue) {
     return accumulator;
 }
 
+function findMin(arr) {
+    let smallestSoFar = arr[0];
+    for (let index = 1; index < arr.length; index++) {
+        let elem = arr[index];
+        if (elem < smallestSoFar) {
+            smallestSoFar = elem;
+        }
+    }
+    return smallestSoFar;
+}
+
 function product(arr) {
     return reduce(arr, (a, e) => a * e, 1);
     // let retval = 1;
@@ -133,4 +144,14 @@ function sum(arr) {
     //     retval = retval + element;
     // }
     // return retval;
+}
+
+// map: (List[A], A => B) => List[B]
+// filter: (List[A], A => Boolean) => List[A]
+// reduce: (List[Elem],
+//          AccumType,
+//          (AccumType, Elem) => AccumType) => AccumType
+
+function min(a, b) {
+    return (a < b) ? a : b;
 }
